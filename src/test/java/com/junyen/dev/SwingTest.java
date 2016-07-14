@@ -1,5 +1,6 @@
 package com.junyen.dev;
 
+import com.junyen.dev.swing.Square;
 import org.junit.Test;
 
 import javax.swing.*;
@@ -69,10 +70,10 @@ public class SwingTest {
         JPanel panel = new JPanel();
         panel.setLayout(gridLayout);
 
-        Rectangle rectangle = new Rectangle(5, 5);
+        Square square = new Square(5, 5);
 
-        frame.getContentPane().add(rectangle);
+        frame.getContentPane().add(square);
 
-        assertEquals(rectangle, frame.getContentPane().getComponent(0));
+        assertEquals(square, frame.getContentPane().getComponent(0));
     }
 }

@@ -1,14 +1,15 @@
-package com.junyen.dev;
+package com.junyen.dev.swing;
 
+import com.junyen.dev.BoardBox;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class TicTacToe {
+public class GameWindow {
     private JFrame frame;
     private JPanel contentPane;
 
-    public TicTacToe(String frameName) {
+    public GameWindow(String frameName) {
         this.frame = new JFrame(frameName);
         this.contentPane = new JPanel();
     }
@@ -17,21 +18,21 @@ public class TicTacToe {
         contentPane.setLayout(new GridLayout(3, 3));
         frame.setContentPane(contentPane);
 
-        Box box = initializeBox();
+        BoardBox box = initializeBox();
         placeBoxesOnGameBoard(box);
 
         frame.setVisible(true);
         frame.pack();
     }
 
-    private Box initializeBox() {
+    private BoardBox initializeBox() {
         int boxWidth = contentPane.getWidth() / 3;
         int boxHeight = contentPane.getHeight() / 3;
-        Box box = new Box(boxWidth, boxHeight);
+        BoardBox box = new BoardBox(boxWidth, boxHeight);
         return box;
     }
 
-    private void placeBoxesOnGameBoard(Box box) {
+    private void placeBoxesOnGameBoard(BoardBox box) {
         final int NB_OF_BOXES = 3;
         final int GAP = 10;
         int xPosition = GAP;
@@ -39,8 +40,8 @@ public class TicTacToe {
 
         for (int i = 0; i < NB_OF_BOXES; i++) { //for column
             for (int y = 0; y < NB_OF_BOXES; y++) { //for row
-                Rectangle rectangle = new Rectangle(xPosition, yPosition);
-                frame.getContentPane().add(rectangle);
+                Square square = new Square(xPosition, yPosition);
+                frame.getContentPane().add(square);
                 xPosition += box.getWidth() + GAP;
             }
             yPosition += box.getHeight() + GAP;

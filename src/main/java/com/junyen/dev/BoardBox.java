@@ -1,13 +1,10 @@
 package com.junyen.dev;
 
-/**
- * Created by tanjunyen on 14/07/16.
- */
-final class Box {
+public class BoardBox {
     private final int width;
     private final int height;
 
-    public Box(int width, int height) {
+    public BoardBox(int width, int height) {
         this.width = width;
         this.height = height;
     }

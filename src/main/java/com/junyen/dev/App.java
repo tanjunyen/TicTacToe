@@ -1,14 +1,12 @@
 package com.junyen.dev;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import com.junyen.dev.swing.GameWindow;
+
+public class App
 {
     public static void main( String[] args )
     {
-        TicTacToe app = new TicTacToe("TicTacToe");
+        GameWindow app = new GameWindow("GameWindow");
         app.initializeFrame();
         app.initializeBoard();
     }

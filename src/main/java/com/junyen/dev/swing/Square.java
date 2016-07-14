@@ -1,18 +1,15 @@
-package com.junyen.dev;
+package com.junyen.dev.swing;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by tanjunyen on 12/07/16.
- */
-public class Rectangle extends JPanel {
+public class Square extends JPanel {
     private final int x;
     private final int y;
     private final int WIDTH = 200;
     private final int HEIGHT = 200;
 
-    public Rectangle(int x, int y) {
+    public Square(int x, int y) {
         this.x = x;
         this.y = y;
     }
