@@ -71,7 +71,7 @@ public class SwingTest {
         JPanel panel = new JPanel();
         panel.setLayout(gridLayout);
 
-        Square square = new Square(5, 5);
+        Square square = new Square();
 
         frame.getContentPane().add(square);
 

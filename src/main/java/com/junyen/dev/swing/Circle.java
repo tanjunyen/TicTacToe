@@ -3,7 +3,7 @@ package com.junyen.dev.swing;
 import javax.swing.*;
 import java.awt.*;
 
-public class Circle extends JComponent{
+public class Circle extends JPanel {
     private final Point center;
     private final int radius;
 

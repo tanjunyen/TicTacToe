@@ -4,21 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Square extends JPanel {
-    private final int x;
-    private final int y;
     private final int WIDTH = 200;
     private final int HEIGHT = 200;
 
-    public Square(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Square() {
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawRect(5, 5, WIDTH, HEIGHT);
         g.setColor(Color.blue);
-        g.fillRect(5, 5, WIDTH, HEIGHT);
+        g.drawRect(0, 0, WIDTH, HEIGHT);
     }
 }
