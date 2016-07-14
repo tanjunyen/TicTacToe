@@ -1,5 +1,6 @@
 package com.junyen.dev;
 
+import com.junyen.dev.swing.Circle;
 import com.junyen.dev.swing.Square;
 import org.junit.Test;
 
@@ -63,7 +64,7 @@ public class SwingTest {
     }
 
     @Test
-    public void addComponents() {
+    public void addComponentToContentPane() {
         JFrame frame = new JFrame(FRAME_LABEL);
         GridLayout gridLayout = new GridLayout(3, 3);
 
@@ -75,5 +76,14 @@ public class SwingTest {
         frame.getContentPane().add(square);
 
         assertEquals(square, frame.getContentPane().getComponent(0));
+    }
+
+    @Test
+    public void drawCircle() {
+        Point center = new Point(20, 20);
+        int radius = 10;
+        Circle circle = new Circle(center, radius);
+        assertEquals(center, circle.getCenter());
+        assertEquals(radius, circle.getRadius());
     }
 }
