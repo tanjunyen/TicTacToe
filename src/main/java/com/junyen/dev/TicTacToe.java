@@ -17,8 +17,22 @@ public class TicTacToe {
 
         frame.setContentPane(panel);
 
-        Rectangle rectangle = new Rectangle();
-        frame.getContentPane().add(rectangle);
+        int contentPaneWidth = frame.getContentPane().getWidth();
+        int boxWidth = (contentPaneWidth / 3) - 50;
+        int contentPaneHeight = frame.getContentPane().getHeight();
+        int boxHeight = (contentPaneHeight / 3) - 50;
+
+        int NB_OF_BOXES = 3;
+        int xPosition = 10;
+        int yPosition = 10;
+        for (int i = 0; i < NB_OF_BOXES; i++) { //for column
+            for (int y = 0; y < NB_OF_BOXES; y++) { //for row
+                Rectangle rectangle = new Rectangle(xPosition, yPosition);
+                frame.getContentPane().add(rectangle);
+                xPosition += boxWidth + 10;
+            }
+            yPosition += boxHeight + 10;
+        }
 
         frame.setVisible(true);
         frame.pack();
@@ -28,7 +42,9 @@ public class TicTacToe {
         frame.setSize(width, height);
     }
 
-    public void setFullScreen() {
-        frame.setExtendedState(frame.MAXIMIZED_BOTH);
+    public void initializeFrame() {
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(500, 500));
+        frame.pack();
     }
 }

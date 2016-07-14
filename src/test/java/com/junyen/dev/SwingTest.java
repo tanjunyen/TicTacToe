@@ -69,7 +69,7 @@ public class SwingTest {
         JPanel panel = new JPanel();
         panel.setLayout(gridLayout);
 
-        Rectangle rectangle = new Rectangle();
+        Rectangle rectangle = new Rectangle(5, 5);
 
         frame.getContentPane().add(rectangle);
 
