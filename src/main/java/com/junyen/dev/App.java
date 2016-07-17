@@ -1,6 +1,10 @@
 package com.junyen.dev;
 
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
 import com.junyen.dev.swing.GameWindow;
+import com.junyen.dev.swing.SwingRegistryModule;
 
 import javax.swing.*;
 
@@ -10,9 +14,9 @@ public class App
     {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                GameWindow app = new GameWindow("GameWindow");
-                app.initializeFrame();
-                app.initializeBoard();
+                Injector injector = Guice.createInjector(new SwingRegistryModule());
+                IGame game = injector.getInstance(IGame.class);
+                game.run();
             }
         });
     }

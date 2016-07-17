@@ -1,18 +1,25 @@
 package com.junyen.dev.swing;
 
+import com.junyen.dev.IGame;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class GameWindow {
+public class GameWindow implements IGame {
     private JFrame frame;
     private JPanel contentPane;
 
-    public GameWindow(String frameName) {
-        this.frame = new JFrame(frameName);
+    public GameWindow() {
+        this.frame = new JFrame();
         this.contentPane = new JPanel();
     }
 
-    public void initializeBoard() {
+    public void run() {
+        initializeFrame();
+        initializeBoard();
+    }
+
+    private void initializeBoard() {
         contentPane.setLayout(new GridLayout(3, 3));
         frame.setContentPane(contentPane);
 
@@ -32,11 +39,10 @@ public class GameWindow {
         }
     }
 
-    public void initializeFrame() {
+    private void initializeFrame() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(400, 400));
         frame.setMaximumSize(new Dimension(600, 600));
         frame.pack();
     }
-
 }
