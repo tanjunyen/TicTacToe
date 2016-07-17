@@ -1,6 +1,5 @@
 package com.junyen.dev;
 
-import com.junyen.dev.swing.Circle;
 import com.junyen.dev.swing.Square;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SwingTest {
 
-    public static final String FRAME_LABEL = "FrameLabel";
+    private static final String FRAME_LABEL = "FrameLabel";
 
     @Test
     public void createVisibleFrame() {
@@ -76,14 +75,5 @@ public class SwingTest {
         frame.getContentPane().add(square);
 
         assertEquals(square, frame.getContentPane().getComponent(0));
-    }
-
-    @Test
-    public void drawCircle() {
-        Point center = new Point(20, 20);
-        int radius = 10;
-        Circle circle = new Circle(center, radius);
-        assertEquals(center, circle.getCenter());
-        assertEquals(radius, circle.getRadius());
     }
 }
